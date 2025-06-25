@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IHC-Grp5-Etapa3</title>
+  <link rel="stylesheet" href="style-aula.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>👋 Bem-vindo,</h1>
+    <h2>🧭 este site é navegável por teclado</h2>
+    
+    <div class="gif-container">
+      <img
+        src="imagens/cat-head.gif"
+        alt="gif de gato digitando em computador freneticamente"
+        class="cat-gif"
+      />
+    </div>
+
+    <h3>😺 Não seja tímido, pode testar!</h3>
+
+    <div class="button-grid">
+      <button onclick="showCat('cat1.gif')">🐾 Gato 1</button>
+      <button onclick="showCat('cat2.gif')">🎯 Gato 2</button>
+      <button onclick="showCat('cat3.gif')">💡 Gato 3</button>
+      <button onclick="showCat('cat4.gif')">🚀 Gato 4</button>
+      <button onclick="showCat('cat5.gif')">🎉 Gato 5</button>
+    </div>
+
+    <div id="extra-cat"></div>
+  </div>
+
+  <script>
+    function showCat(filename) {
+      document.getElementById('extra-cat').innerHTML += `<img src="imagens/${filename}" class="cat-gif" alt="${filename}">`;
+    }
+  </script>
+
+</body>
+</html>
