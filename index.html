@@ -7,36 +7,182 @@
   <link rel="stylesheet" href="style-aula.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>👋 Bem-vindo,</h1>
-    <h2>🧭 este site é navegável por teclado</h2>
-    
-    <div class="gif-container">
+
+  <div class="total">
+    <div class="container">
+      <h1>👋 Bem-vindo,</h1>
+      <h2>🧭 este site é navegável por teclado</h2>
+      
+      <div class="gif-container">
+        <img
+          src="imagens/cat-head.gif"
+          alt="gif de gato digitando em computador freneticamente"
+          class="cat-gif"
+        />
+      </div>
+
+      <h3>😺 Não seja tímido, pode testar!</h3>
+
+      <div class="button-grid">
+        <button onclick="showCat('cat1.gif')">🐾 Gato 1</button>
+        <button onclick="showCat('cat2.gif')">🎯 Gato 2</button>
+        <button onclick="showCat('cat3.gif')">💡 Gato 3</button>
+        <button onclick="showCat('cat4.gif')">🚀 Gato 4</button>
+        <button onclick="showCat('cat5.gif')">🎉 Gato 5</button>
+      </div>
+
+      <div id="extra-cat"></div>
+    </div>
+
+    <div class="container">
+      <h3>🔍 Navegação por teclado tem muitas vantagens, sabia?</h3>
+
       <img
-        src="imagens/cat-head.gif"
-        alt="gif de gato digitando em computador freneticamente"
-        class="cat-gif"
+          src="imagens/cat6.gif"
+          alt="gif de gato de oculos com olhar desconfiado"
+          class="cat-gif"
       />
+
+      <div class="dropdown">
+        <button onclick="toggleDropdown()" id="dropdownButton">👇 Ver vantagens</button>
+        <ul id="dropdownList" class="hidden">
+          <li>✔️ Acessível para todos</li>
+          <li>✔️ Mais rápido para quem domina</li>
+          <li>✔️ Não precisa de mouse</li>
+          <li>✔️ Ideal para pessoas com deficiência</li>
+          <li>✔️ Funciona em qualquer dispositivo</li>
+        </ul>
+      </div>
     </div>
 
-    <h3>😺 Não seja tímido, pode testar!</h3>
+    <div class="container">
+        <h3>💡 Sabe por que é importante testar com modais também?</h3>
+        <!-- Botão para abrir modal -->
+        <button onclick="openModal('simpleModal')">Abrir modal</button>
 
-    <div class="button-grid">
-      <button onclick="showCat('cat1.gif')">🐾 Gato 1</button>
-      <button onclick="showCat('cat2.gif')">🎯 Gato 2</button>
-      <button onclick="showCat('cat3.gif')">💡 Gato 3</button>
-      <button onclick="showCat('cat4.gif')">🚀 Gato 4</button>
-      <button onclick="showCat('cat5.gif')">🎉 Gato 5</button>
+        <!-- Modal -->
+        <div id="simpleModal" class="modal hidden">
+          <div class="modal-content">
+            <span onclick="closeModal('simpleModal')" class="close-button">&times;</span>
+            <p>Parece que deu certo né?</p>
+            <p>Agora tenta fechar o modal....</p>
+            <img
+                src="imagens/cat7.gif"
+                alt="gif de gato rindo da sua cara"
+                class="cat-gif"
+              />
+            </div>
+          </div>
     </div>
 
-    <div id="extra-cat"></div>
+        <div class="container">
+          <h3>📕 Agora vem, vou te ensinar como resolver</h3>
+
+          <img
+                  src="imagens/cat9.gif"
+                  alt="gif de gato digitando no computador e foco no computador, gif alucinótico"
+                  class="cat-gif"
+            />
+
+          <!-- Botão para abrir modal -->
+          <button onclick="openModal('simpleModal2')">Vem ser inteligente!</button>
+  
+          <!-- Modal -->
+          <div id="simpleModal2" class="modal hidden">
+            <div class="modal-content">
+              <button onclick="closeModal('simpleModal2')" class="close-button">&times;</button>
+              <img
+                  src="imagens/cat8.gif"
+                  alt="gato lendo um livro de estrategias militares"
+                  class="cat-gif"
+              />
+              <p>O truque é sempre usar <strong>BOTÕES</strong></p>
+              <p>No último código estávamos usando span</p>
+              <p><strong>Primeiro Modal:</strong></p>
+              <img
+                  src="imagens/cod1.png"
+                  alt="imagem do codigo usando span"
+                  class="imagem-cod"
+              />
+              <p> </p>
+              <p><strong>Segundo Modal:</strong></p>
+              <img
+                  src="imagens/cod2.png"
+                  alt="imagem do codigo usando button"
+                  class="imagem-cod"
+              />
+            </div>
+          </div>
+
+        </div>
+
+          
+          <div class="teclado-checklist">
+            <img src="imagens/cat10.gif" alt="gato te dando um beijo" class="cat-gif" />
+          
+            <h2>🔮 Como a Mágica é feita:</h2>
+            <h3><em>Dicas para deixar seu projeto acessível por teclado</em></h3>
+          
+            <ul>
+              <li>
+                <strong>1. Use elementos focáveis</strong><br />
+                Prefira <code>&lt;button&gt;</code>, <code>&lt;a href&gt;</code>, <code>&lt;input&gt;</code><br />
+                Evite usar <code>&lt;div&gt;</code> ou <code>&lt;span&gt;</code> como botões.
+              </li>
+          
+              <li>
+                <strong>2. Ordem do <kbd>Tab</kbd> deve ser lógica</strong><br />
+                Navegação precisa seguir a ordem visual da página.<br />
+                Evite usar <code>tabindex</code> manual demais.
+              </li>
+          
+              <li>
+                <strong>3. Não prenda o foco</strong><br />
+                Ao abrir modais, mantenha o foco dentro e permita fechar com <kbd>Esc</kbd>.
+              </li>
+          
+              <li>
+                <strong>4. Use HTML semântico</strong><br />
+                Estruture com <code>&lt;form&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code> etc.<br />
+                Evite usar <code>&lt;div&gt;</code> pra tudo.
+              </li>
+          
+              <li>
+                <strong>5. Dê suporte ao teclado</strong><br />
+                Elementos com <code>onclick</code> precisam responder a <code>Enter</code> e <code>Espaço</code> também.
+              </li>
+          
+              <li>
+                <strong>6. Teste de verdade!</strong><br />
+                Use: <kbd>Tab</kbd>, <kbd>Shift</kbd>+<kbd>Tab</kbd>, <kbd>Enter</kbd>, <kbd>Esc</kbd><br />
+                ✅ Você consegue navegar, ativar, fechar e sair de tudo?
+              </li>
+            </ul>
+          </div>
+          
+      
+    
   </div>
 
   <script>
     function showCat(filename) {
       document.getElementById('extra-cat').innerHTML += `<img src="imagens/${filename}" class="cat-gif" alt="${filename}">`;
     }
+    function toggleDropdown() {
+      const list = document.getElementById("dropdownList");
+      list.classList.toggle("hidden");
+    }
+    function openModal(id) {
+      document.getElementById(id).classList.remove("hidden");
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.add("hidden");
+    }
+
   </script>
+
+  
 
 </body>
 </html>
